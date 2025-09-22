@@ -1,0 +1,55 @@
+################################################################################################
+#Box plot code
+################################################################################################
+
+#Purpose: Create box plot for period 2 data
+#Name: Your name
+#Date: Your date
+import pandas as pd
+import matplotlib.pyplot as plt
+df2 = pd.read_csv("formatdata2.csv")
+df2.boxplot(); plt.suptitle('Period 2 box plot')
+plt.show()
+
+################################################################################################
+#Compare periods plot
+################################################################################################
+#Purpose: Create Celsius plot comparing period 1 and period 2
+#Name: Your name
+#Date: Your date
+import pandas as pd
+import matplotlib.pyplot as plt
+df1 = pd.read_csv("formatdata.csv") #baseline data is period 1 (older)
+df2 = pd.read_csv("formatdata2.csv") #data for period 2 (more recent)
+plt.figure(); df1.Celsius.plot(label = 'period '); df2.Celsius.plot(label = 'period 2'); plt.legend(loc='best'); plt.suptitle('Celsius')
+plt.show()
+
+
+################################################################################################
+#Histogram
+################################################################################################
+#Purpose: Create a histogram of humidity data from the second period
+#Name: Your name
+#Date: Your date
+import pandas as pd
+import matplotlib.pyplot as plt
+df1 = pd.read_csv("formatdata.csv")
+df2 = pd.read_csv("formatdata2.csv")
+df2['Humidity'].hist(bins=10, alpha=0.5); plt.suptitle('Histogram of Humidity')
+plt.show()
+
+
+
+################################################################################################
+#Scatter plot
+################################################################################################
+#Purpose: Create scatter plot of humidity for period 1. Can replace df1 to df2 to display second period data
+#Name: Your name
+#Date: Your date
+import pandas as pd
+import matplotlib.pyplot as plt
+df1 = pd.read_csv("formatdata.csv")
+df2 = pd.read_csv("formatdata2.csv")
+plt.scatter(df1.index.values,df1['Humidity']); plt.suptitle('Humidity')
+plt.show()
+
